@@ -39,6 +39,7 @@ h1 {
 
 .accordeons:hover .open {
   color: #221095;
+  cursor: pointer;
 }
 
 .accordion a {

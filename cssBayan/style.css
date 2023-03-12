@@ -1,0 +1,103 @@
+body {
+  background: #F5F5EC;
+  font-family: 'Calibri';
+}
+
+h1 {
+  margin-left: 10%;
+  margin-top: 5%;
+  color: #000000;
+  text-align: left;
+  font-family: 'Calibri';
+}
+
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 300px;
+  height: 300px;
+}
+
+.accordion {
+  position: relative;
+  margin: 60px auto;
+  width: 80%;
+}
+
+[id*="open-accordion"], [id*="close-accordion"] {
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  width: 99%;
+}
+
+[id*="close-accordion"] {
+  display: none;
+}
+
+.accordeons:hover .open {
+  color: #221095;
+  cursor: pointer;
+}
+
+.accordion a {
+  color: #000000;
+  font-size: 1.25em;
+  font-weight: 600;
+  font-family: "Calibri";
+  padding-left: 2%;
+  text-decoration: none;
+  text-shadow: none;
+}
+
+[id*="open-accordion"]:after, [id*="close-accordion"]:after {
+  content: "+";
+  font-size: x-large;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  right: 5px;
+  top: 15px;
+  z-index: 999;
+}
+
+.target-fix {
+  display: block;
+  top: 0;
+  left: 0;
+  position: fixed;
+}
+
+.accordion-content {
+  height: 0;
+  margin: -1px auto 0;
+  padding: 0 2.5%;
+  position: relative;
+  overflow: hidden;
+  width: 90%;
+  transition: all 0.1s ease;
+  -webkit-transition: all 0.1s ease;
+  -moz-transition: all 0.1s ease;
+}
+
+.accordion span:target ~ .accordion-content {
+  display: block;
+  height: auto;
+  padding-bottom: 25px;
+  padding-top: 10px;
+}
+
+.accordion span:target ~ [id*="close-accordion"] {
+  display: block;
+}
+
+.accordion span:target ~ [id*="open-accordion"] {
+  display: none;
+}
+
+.accordion span:target ~ [id*="close-accordion"]:after {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
